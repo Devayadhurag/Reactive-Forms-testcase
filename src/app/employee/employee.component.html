@@ -1,0 +1,35 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div class="m-4">
+        <label class="form-label" for="name">Name</label><br>
+        <input class="form-control" type="text" placeholder="Enter your name" formControlName="name">
+        <div class="text-danger" *ngIf="name && name.invalid && name.touched"> *Username required</div>
+    </div>
+    <div class="m-4">
+        <label class="form-label" for="address">Address</label><br>
+        <input class="form-control" type="text" placeholder="Enter your address" formControlName="address">
+        <div class="text-danger" *ngIf="address && address.invalid && address.touched"> *Address required</div>
+    </div>
+    <div class="m-4">
+        <label class="form-label" for="email">Email</label><br>
+        <input class="form-control" type="email" placeholder="Enter your email" formControlName="email">
+        <div class="text-danger" *ngIf="email && email.invalid && email.touched"> *Invalid email</div>
+    </div>
+    <div class="m-4">
+        <label class="form-label" for="password">Password</label><br>
+        <input class="form-control" type="password" placeholder="Enter your password" formControlName="password">
+        <div class="text-danger" *ngIf="password && password.invalid && password.touched"> *Invalid password</div>
+    </div>
+    <div class="m-4">
+        <label class="form-label" for="phone">Phone Number</label><br>
+        <input class="form-control" type="tel" placeholder="Enter your phone number" formControlName="phone">
+        <div class="text-danger" *ngIf="phone && phone.invalid && phone.touched"> *Phone number required</div>
+    </div>
+    <div class="m-4">
+        <label class="form-label" for="message">Message</label><br>
+        <input class="form-control" type="text" placeholder="Enter your message" formControlName="message">
+        <div class="text-danger" *ngIf="message && message.invalid && message.touched"> *Message required</div>
+    </div>
+    <div class="col-md-12 text-center">
+        <button class="btn btn-primary m-4" [disabled]="loginForm.invalid">Submit</button>
+    </div>
+</form>
